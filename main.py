@@ -1,4 +1,4 @@
-from screens.Screen import MenuScreen
+from screens.menu_screen import MenuScreen
 import time
 import pygetwindow as pw
 from util.util import Util

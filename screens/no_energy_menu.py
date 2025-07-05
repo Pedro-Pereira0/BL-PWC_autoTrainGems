@@ -1,0 +1,34 @@
+import time
+from screens.base_screen import Screen
+
+class NoEnergyMenu(Screen):
+    def __init__(self,imagePath):
+        super().__init__(imagePath)
+        self.confirmImage = imagePath + "control/confirmButton.jpg"
+        self.maxEnergy = imagePath + "control/maxEnergy.jpg"
+        self.restoreImage = imagePath + "control/RestoreButton.jpg"
+        self.close = imagePath + "control/closeButton.jpg"
+        
+    def run(self):
+        print("This is the no energy Menu")
+        time.sleep(self.WAITTIME)
+
+        buttonX, buttonY = self.findImage(self.confirmImage)
+        self.clickOnImage(buttonX,buttonY)
+        
+        time.sleep(1)
+
+        buttonX, buttonY = self.findImage(self.maxEnergy)
+        self.clickOnImage(buttonX,buttonY)
+
+        buttonX, buttonY = self.findImage(self.restoreImage)
+        self.clickOnImage(buttonX, buttonY)
+
+        time.sleep(1)
+
+        buttonX, buttonY = self.findImage(self.close)
+        self.clickOnImage(buttonX, buttonY)
+
+        # Import here to avoid circular import
+        from screens.edit_gear_menu import EditGearMenu
+        EditGearMenu(self.imagePath).run()
