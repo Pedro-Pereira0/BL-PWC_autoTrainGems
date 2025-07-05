@@ -1,10 +1,10 @@
 from screens.menu_screen import MenuScreen
+from screens.select_player_screen import SelectPlayerScreen
 import time
 import pygetwindow as pw
 from util.util import Util
 import threading
 
-playerToTrain = "testFiles/teste1(Kunigami).jpg"
 window = "BlueStacks App Player"
 imagePath = "img/"
 util =  Util()
