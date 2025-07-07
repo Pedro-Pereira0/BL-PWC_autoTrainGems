@@ -15,7 +15,7 @@ class TrainingMenuScreen(Screen):
             buttonX, buttonY = self.findImage(self.typeTrain)
             time.sleep(0.5)
             if buttonX == None or buttonY == None:
-                button1X, button1Y = self.findImage(self.prevTrain)
+                button1X, button1Y = self.findImage(self.prevTrain, 0.7)
                 self.clickOnImage(button1X, button1Y)
             else:
                 break
