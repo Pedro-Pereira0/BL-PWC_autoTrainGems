@@ -4,7 +4,7 @@ from model.screens.base_screen import Screen
 class MenuScreen(Screen):
     def __init__(self, options):
         super().__init__(options)
-        self.trainImg = options.imagePath+"control/train.jpg"
+        self.trainImg:str = options.imagePath+"control/train.jpg"
 
     def run(self):
         print("This is the Menu Screen")

@@ -6,8 +6,8 @@ from model.opencv.Opencv import getTextFromImage
 class FinalConfirmationMenu(Screen):
     def __init__(self,options):
         super().__init__(options)
-        self.startTrainButton = options.imagePath + "control/startTrainButton.jpg"
-        self.energyImg = options.imagePath + "control/energyImg.jpg"
+        self.startTrainButton:str = options.imagePath + "control/startTrainButton.jpg"
+        self.energyImg:str = options.imagePath + "control/energyImg.jpg"
 
     #Este metodo vai tratar da string (tirar espaços em branco e criar uma substring) e retornar apenas 
     # a energia depois do treino

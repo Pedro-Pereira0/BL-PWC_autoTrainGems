@@ -5,9 +5,9 @@ from model.screens.base_screen import Screen
 class SelectPlayerScreen(Screen):
     def __init__(self, options):
         super().__init__(options)
-        self.playerImg = options.player.playerImgPath
-        self.filterButton = options.imagePath + "control/filterButton.jpg"
-        self.nextImg = options.imagePath + "control/nextButton.jpg"
+        self.playerImg:str = options.player.playerImgPath
+        self.filterButton:str = options.imagePath + "control/filterButton.jpg"
+        self.nextImg:str = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Select player screen!")

@@ -1,10 +1,11 @@
 import pyautogui as pg
 import time
 from model.opencv.Opencv import getTextFromImage
+from model.TrainingOptions import TrainingOptions
 
 class Screen:
     def __init__(self, options):
-       self.options = options
+       self.options:TrainingOptions = options
        self.WAITTIME = 2
        
 

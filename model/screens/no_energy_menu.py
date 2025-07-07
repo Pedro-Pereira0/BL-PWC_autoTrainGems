@@ -4,10 +4,10 @@ from model.screens.base_screen import Screen
 class NoEnergyMenu(Screen):
     def __init__(self,options):
         super().__init__(options)
-        self.confirmImage = options.imagePath + "control/confirmButton.jpg"
-        self.maxEnergy = options.imagePath + "control/maxEnergy.jpg"
-        self.restoreImage = options.imagePath + "control/RestoreButton.jpg"
-        self.close = options.imagePath + "control/closeButton.jpg"
+        self.confirmImage:str = options.imagePath + "control/confirmButton.jpg"
+        self.maxEnergy:str = options.imagePath + "control/maxEnergy.jpg"
+        self.restoreImage:str = options.imagePath + "control/RestoreButton.jpg"
+        self.close:str = options.imagePath + "control/closeButton.jpg"
         
     def run(self):
         print("This is the no energy Menu")

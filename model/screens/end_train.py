@@ -3,8 +3,8 @@ import time
 class EndTrain(Screen):
     def __init__(self,options):
         super().__init__(options)
-        self.finishButton = options.imagePath + "control/finishButton.jpg"
-        self.cancelButton = options.imagePath + "control/cancelButton.jpg"
+        self.finishButton:str = options.imagePath + "control/finishButton.jpg"
+        self.cancelButton:str = options.imagePath + "control/cancelButton.jpg"
     def run(self):
         print("This is the End Training Menu")
         time.sleep(self.WAITTIME)

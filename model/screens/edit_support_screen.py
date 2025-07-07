@@ -4,8 +4,8 @@ from model.screens.base_screen import Screen
 class EditSupportScreen(Screen):
     def __init__(self,options):
         super().__init__(options)
-        self.addSupportButton = options.imagePath + "control/addSupportButton.jpg"
-        self.nextButton = options.imagePath + "control/nextButton.jpg"
+        self.addSupportButton:str = options.imagePath + "control/addSupportButton.jpg"
+        self.nextButton:str = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Edit Support Screen!")

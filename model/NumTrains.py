@@ -3,7 +3,7 @@ from util.Expections import InvalidNumber
 class NumTrains():
     def __init__(self, nTrainString):
         try:
-            self.numTrains = int(nTrainString)
+            self.numTrains:int = int(nTrainString)
 
             if self.validate() == False:
                 raise InvalidNumber("Invalid number. Must be a number, higher or equal to 0.")

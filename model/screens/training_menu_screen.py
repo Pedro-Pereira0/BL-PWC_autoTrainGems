@@ -4,9 +4,9 @@ from model.screens.base_screen import Screen
 class TrainingMenuScreen(Screen):
     def __init__(self, options):
         super().__init__(options)
-        self.typeTrain = options.imagePath + "control/typeTrain.jpg"
-        self.prevTrain = options.imagePath + "control/leftSideButton.jpg"
-        self.nextImg = options.imagePath + "control/nextButton.jpg"
+        self.typeTrain:str = options.imagePath + "control/typeTrain.jpg"
+        self.prevTrain:str = options.imagePath + "control/leftSideButton.jpg"
+        self.nextImg:str = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Training Menu Screen")

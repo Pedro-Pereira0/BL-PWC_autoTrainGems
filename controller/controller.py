@@ -9,7 +9,6 @@ class Controller:
         pass
 
     def startTraining(self,options):
-
         #size(width=544, height=934)
         blueLockGame = pw.getWindowsWithTitle(self.window)[0]
         time.sleep(0.5)

@@ -2,6 +2,7 @@ from tkinter import *
 from model.NumTrains import NumTrains
 from model.Player import Player
 from model.TrainingOptions import TrainingOptions
+from model.EnergyType import EnergyType
 
 from controller.Controller import Controller
 
@@ -62,7 +63,7 @@ class View:
             try:
                 numTrain = NumTrains(nTrainingsInput.get())
                 player = Player(playerValue.get())
-                energyType = energyTypeVar.get()
+                energyType = EnergyType(energyTypeVar.get())
                 options = TrainingOptions(numTrain, player, energyType)
                 
                 controller = Controller()

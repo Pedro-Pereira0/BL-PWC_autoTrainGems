@@ -4,9 +4,9 @@ from model.screens.base_screen import Screen
 class Training(Screen):
     def __init__(self,options):
         super().__init__(options)
-        self.autoButton = options.imagePath + "control/autoButton.jpg"
-        self.trainCard = options.imagePath + "control/trainCard.jpg"
-        self.training = options.imagePath + "control/training.jpg"
+        self.autoButton:str = options.imagePath + "control/autoButton.jpg"
+        self.trainCard:str = options.imagePath + "control/trainCard.jpg"
+        self.training:str = options.imagePath + "control/training.jpg"
 
     def run(self):
         print("Training has started...")
