@@ -1,11 +1,11 @@
 import time
-from screens.base_screen import Screen
+from model.screens.base_screen import Screen
 
 class EditSupportScreen(Screen):
-    def __init__(self,imagePath):
-        super().__init__(imagePath)
-        self.addSupportButton = imagePath + "control/addSupportButton.jpg"
-        self.nextButton = imagePath + "control/nextButton.jpg"
+    def __init__(self,options):
+        super().__init__(options)
+        self.addSupportButton = options.imagePath + "control/addSupportButton.jpg"
+        self.nextButton = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Edit Support Screen!")
@@ -15,8 +15,8 @@ class EditSupportScreen(Screen):
         self.clickOnImage(buttonX, buttonY)
 
         # Import here to avoid circular import
-        from screens.friend_choose_menu import FriendChooseMenu
-        FriendChooseMenu(self.imagePath).run()
+        from model.screens.friend_choose_menu import FriendChooseMenu
+        FriendChooseMenu(self.options).run()
         print("Back")
         time.sleep(2)
 
@@ -24,5 +24,5 @@ class EditSupportScreen(Screen):
         self.clickOnImage(buttonX,buttonY)
 
         # Import here to avoid circular import
-        from screens.edit_gear_menu import EditGearMenu
-        EditGearMenu(self.imagePath).run()
+        from model.screens.edit_gear_menu import EditGearMenu
+        EditGearMenu(self.options).run()

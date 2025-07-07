@@ -1,12 +1,12 @@
 import time
-from screens.base_screen import Screen
+from model.screens.base_screen import Screen
 
 class TrainingMenuScreen(Screen):
-    def __init__(self, imagePath):
-        super().__init__(imagePath)
-        self.typeTrain = imagePath + "control/typeTrain.jpg"
-        self.prevTrain = imagePath + "control/leftSideButton.jpg"
-        self.nextImg = imagePath + "control/nextButton.jpg"
+    def __init__(self, options):
+        super().__init__(options)
+        self.typeTrain = options.imagePath + "control/typeTrain.jpg"
+        self.prevTrain = options.imagePath + "control/leftSideButton.jpg"
+        self.nextImg = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Training Menu Screen")
@@ -24,5 +24,5 @@ class TrainingMenuScreen(Screen):
         self.clickOnImage(button2X, button2Y)
 
         # Import here to avoid circular import
-        from screens.select_player_screen import SelectPlayerScreen
-        SelectPlayerScreen(self.imagePath).run()
+        from model.screens.select_player_screen import SelectPlayerScreen
+        SelectPlayerScreen(self.options).run()

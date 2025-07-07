@@ -1,13 +1,13 @@
 import time
 import pyautogui as pg
-from screens.base_screen import Screen
+from model.screens.base_screen import Screen
 
 class SelectPlayerScreen(Screen):
-    def __init__(self, imagePath):
-        super().__init__(imagePath)
-        self.playerImg = imagePath + "player/Junichi.jpg"
-        self.filterButton = imagePath + "control/filterButton.jpg"
-        self.nextImg = imagePath + "control/nextButton.jpg"
+    def __init__(self, options):
+        super().__init__(options)
+        self.playerImg = options.player.playerImgPath
+        self.filterButton = options.imagePath + "control/filterButton.jpg"
+        self.nextImg = options.imagePath + "control/nextButton.jpg"
 
     def run(self):
         print("This is the Select player screen!")
@@ -35,5 +35,5 @@ class SelectPlayerScreen(Screen):
         self.clickOnImage(buttonX,buttonY)
 
         # Import here to avoid circular import
-        from screens.edit_support_screen import EditSupportScreen
-        EditSupportScreen(self.imagePath).run()
+        from model.screens.edit_support_screen import EditSupportScreen
+        EditSupportScreen(self.options).run()

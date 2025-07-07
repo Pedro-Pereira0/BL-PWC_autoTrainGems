@@ -1,12 +1,12 @@
 import time
-from screens.base_screen import Screen
+from model.screens.base_screen import Screen
 
 class Training(Screen):
-    def __init__(self,imagePath):
-        super().__init__(imagePath)
-        self.autoButton = imagePath + "control/autoButton.jpg"
-        self.trainCard = imagePath + "control/trainCard.jpg"
-        self.training = imagePath + "control/training.jpg"
+    def __init__(self,options):
+        super().__init__(options)
+        self.autoButton = options.imagePath + "control/autoButton.jpg"
+        self.trainCard = options.imagePath + "control/trainCard.jpg"
+        self.training = options.imagePath + "control/training.jpg"
 
     def run(self):
         print("Training has started...")
@@ -33,5 +33,5 @@ class Training(Screen):
                 if(button1X == None or button1Y == None):
                     isTraining = False
                     # Import here to avoid circular import
-                    from screens.end_train import EndTrain
-                    EndTrain(self.imagePath).run()
+                    from model.screens.end_train import EndTrain
+                    EndTrain(self.options).run()

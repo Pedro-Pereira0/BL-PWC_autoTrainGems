@@ -1,10 +1,10 @@
 import pyautogui as pg
 import time
-from opencv.Opencv import getTextFromImage
+from model.opencv.Opencv import getTextFromImage
 
 class Screen:
-    def __init__(self, imagePath):
-       self.imagePath = imagePath
+    def __init__(self, options):
+       self.options = options
        self.WAITTIME = 2
        
 
@@ -19,7 +19,7 @@ class Screen:
             print("Image not found! Image:", image)
             return None,None
         
-    def findImageForScreenShot(self,image, confValue = 0.8):
+    def findImageForscreenshot(self,image, confValue = 0.8):
         try:
             imageLoc = pg.locateOnScreen(image, confidence=confValue)
             return imageLoc
