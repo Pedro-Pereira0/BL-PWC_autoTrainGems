@@ -1,5 +1,5 @@
 import os
-from util.Expections import NonExistingPlayer
+from util.Exceptions import NonExistingPlayer
 
 class Player():
     imgPath = "img/player/"

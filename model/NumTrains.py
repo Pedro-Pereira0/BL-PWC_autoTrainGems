@@ -1,4 +1,4 @@
-from util.Expections import InvalidNumber
+from util.Exceptions import InvalidNumber
 
 class NumTrains():
     def __init__(self, nTrainString):
