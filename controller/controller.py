@@ -1,4 +1,5 @@
 from model.screens.menu_screen import MenuScreen
+from model.screens.no_energy_menu import NoEnergyMenu
 import time
 import pygetwindow as pw
 
@@ -17,4 +18,5 @@ class Controller:
         time.sleep(0.5)
         for i in range(options.numTrain.numTrains):
             print("Training number:", i+1)
-            MenuScreen(options).run()
+            NoEnergyMenu(options).run()
+            #MenuScreen(options).run()

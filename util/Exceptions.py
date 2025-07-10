@@ -3,3 +3,6 @@ class InvalidNumber(Exception):
 
 class NonExistingPlayer(Exception):
     pass
+
+class InvalidEnergyException(Exception):
+    pass
