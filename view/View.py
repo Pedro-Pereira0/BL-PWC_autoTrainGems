@@ -41,7 +41,7 @@ class View:
         nTrainingsInput = Entry(window)
         nTrainingsInput.grid(column = 1, row = 0, sticky = "W", padx = self.PADDING, pady = self.PADDING) 
        
-        playerList = ["Kunigami","Junichi"]
+        playerList = ["Kunigami", "Junichi", "Isagi"]
         playerValue = StringVar(window)
         playerValue.set("Select a player:")
 

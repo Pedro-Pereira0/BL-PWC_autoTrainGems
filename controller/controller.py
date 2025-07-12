@@ -29,5 +29,4 @@ class Controller:
         time.sleep(0.5)
         for i in range(options.numTrain.numTrains):
             print("Training number:", i+1)
-            FriendChooseMenu(options).run()
-            #MenuScreen(options).run()
+            MenuScreen(options).run()
