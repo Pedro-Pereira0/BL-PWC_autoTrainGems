@@ -31,3 +31,4 @@ class FriendChooseMenu(Screen):
                     continue
                 else:
                     self.clickOnImage(buttonX,buttonY)
+                    return None
