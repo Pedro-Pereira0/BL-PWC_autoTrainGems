@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import pytesseract
-import re
 
 def getTextFromImage(image):
     # Convert to OpenCV format

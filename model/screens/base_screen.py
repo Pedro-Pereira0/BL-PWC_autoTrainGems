@@ -19,6 +19,14 @@ class Screen:
         except pg.ImageNotFoundException:
             print("Image not found! Image:", image)
             return None,None
+    
+    def findImageWithRegion(self,image, region ,confValue = 0.8):
+        try:
+            buttonX, buttonY = pg.locateCenterOnScreen(image, region = region ,confidence=confValue, grayscale=False)
+            return buttonX, buttonY
+        except pg.ImageNotFoundException:
+            print("Image not found! Image:", image)
+            return None,None
         
     def findImageForscreenshot(self,image, confValue = 0.8):
         try:
@@ -27,6 +35,10 @@ class Screen:
         except pg.ImageNotFoundException:
             print("Image not found! Image:", image)
             return None
+        
+    def findAllImages(self, img, conf = 0.76) -> list:
+        allImages = pg.locateAllOnScreen(img, grayscale=True, confidence = conf)
+        return list(allImages)
         
     def clickOnImage(self, clickX, clickY, interval = 0.5):
         if(clickX != None and clickY != None):
@@ -37,10 +49,10 @@ class Screen:
             print("Cannot click invalid coordinates")
     
     #Alguns valores alterados por causa de ser uma imagem especifica
-    def convertToIntTuple(self, position):
-        left = int(position.left)+ 100
+    def convertBoxToInt(self, position):
+        left = int(position.left)
         top = int(position.top)
         height = int(position.height)
-        width = int(position.width)+50
+        width = int(position.width)
 
-        return (left,top,width,height)
+        return left,top,width,height

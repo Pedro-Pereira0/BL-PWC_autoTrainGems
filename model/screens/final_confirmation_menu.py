@@ -27,7 +27,9 @@ class FinalConfirmationMenu(Screen):
         #Get The stamina value after the training
         energyLoc = self.findImageForscreenshot(self.energyImg)
         #Adds width because i want to extract the energy left
-        region = self.convertToIntTuple(energyLoc)
+        left, top, width, height = self.convertBoxToInt(energyLoc)
+        region = (left + 100, top, width + 50, height)
+        
         staminaImg = pg.screenshot(region = region)
     
         energy = getTextFromImage(staminaImg)
