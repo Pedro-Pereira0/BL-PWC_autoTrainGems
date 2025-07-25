@@ -26,6 +26,11 @@ class Training(Screen):
             self.clickOnImage(buttonX, buttonY, interval = 0.2)
             self.clickOnImage(buttonX, buttonY, interval = 0.2)
 
+            #Check if its in a match screen, if so, start the match.
+            from model.screens.match import Match
+            Match(self.options).run()
+
+            #Verify if its still training
             button1X, button1Y = self.findImage(self.training)
             if(button1X == None or button1Y == None):
                 time.sleep(1)

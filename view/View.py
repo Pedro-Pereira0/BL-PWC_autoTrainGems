@@ -59,6 +59,8 @@ class View:
         energyTypeBigRadio = Radiobutton(window, text = "Big",variable = energyTypeVar, value = 2)
         energyTypeBigRadio.grid(column = 3, row = 2, sticky = "N", padx = self.PADDING, pady = self.PADDING)
 
+        #TODO: LET THE USER DEFINE THE POSITION OF THE TRAINING TEAM.
+
         def getTrainingOptions():
             try:
                 numTrain = NumTrains(nTrainingsInput.get())
