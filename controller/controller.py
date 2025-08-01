@@ -1,5 +1,5 @@
 from model.screens.menu_screen import MenuScreen
-from model.screens.friend_choose_menu import FriendChooseMenu
+from model.screens.training import Training
 import time
 import pygetwindow as pw
 
@@ -29,4 +29,5 @@ class Controller:
         time.sleep(0.5)
         for i in range(options.numTrain.numTrains):
             print("Training number:", i+1)
+            #Training(options).run()
             MenuScreen(options).run()
