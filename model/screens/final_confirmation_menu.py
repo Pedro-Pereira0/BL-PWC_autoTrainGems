@@ -9,8 +9,6 @@ class FinalConfirmationMenu(Screen):
         self.startTrainButton:str = options.imagePath + "control/startTrainButton.jpg"
         self.energyImg:str = options.imagePath + "control/energyImg.jpg"
 
-    #Este metodo vai tratar da string (tirar espaços em branco e criar uma substring) e retornar apenas 
-    # a energia depois do treino
     def extractEnergy(self, string):
         string.strip()
         if string.count(">") > 1:
@@ -24,19 +22,26 @@ class FinalConfirmationMenu(Screen):
     def run(self):
         print("This is the Final Confirmation")
         time.sleep(self.WAITTIME)
-        #Get The stamina value after the training
-        energyLoc = self.findImageForscreenshot(self.energyImg)
-        #Adds width because i want to extract the energy left
-        left, top, width, height = self.convertBoxToInt(energyLoc)
-        region = (left + 100, top, width + 50, height)
-        
-        staminaImg = pg.screenshot(region = region)
-    
-        energy = getTextFromImage(staminaImg)
 
-        energyLeftString = self.extractEnergy(energy)
+        while True:
+            #Get The stamina value after the training
+            energyLoc = self.findImageForscreenshot(self.energyImg)
+            #Adds width because i want to extract the energy left
+            left, top, width, height = self.convertBoxToInt(energyLoc)
+            region = (left + 100, top, width + 50, height)
+            
+            staminaImg = pg.screenshot(region = region)
         
-        energyLeft = int(energyLeftString)
+            energy = getTextFromImage(staminaImg)
+
+            energyLeftString = self.extractEnergy(energy)
+            try:
+                energyLeft = int(energyLeftString)
+            except:
+                print("Retry to get the remaining energy...")
+                break
+
+
         print(energyLeft)
         isThereEnergy = True
         if(energyLeft < 0):

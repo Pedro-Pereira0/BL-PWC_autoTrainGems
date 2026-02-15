@@ -6,9 +6,8 @@ from model.TrainingOptions import TrainingOptions
 class Screen:
     def __init__(self, options):
        self.options:TrainingOptions = options
-       self.WAITTIME = 2
+       self.WAITTIME = 4
        
-
     def run(self):
         print("Iam running")
 
