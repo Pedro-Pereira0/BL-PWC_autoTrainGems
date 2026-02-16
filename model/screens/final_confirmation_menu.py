@@ -1,7 +1,7 @@
 import time
 import pyautogui as pg
 from model.screens.base_screen import Screen
-from model.opencv.Opencv import getTextFromImage
+from model.opencv.Opencv import getTextFromImage, getTextFromImage2
 
 class FinalConfirmationMenu(Screen):
     def __init__(self,options):
@@ -33,7 +33,7 @@ class FinalConfirmationMenu(Screen):
             
             staminaImg = pg.screenshot(region = region)
         
-            energy = getTextFromImage(staminaImg)
+            energy = getTextFromImage2(staminaImg)
 
             energyLeftString = self.extractEnergy(energy)
             energyLeft = int(energyLeftString)
