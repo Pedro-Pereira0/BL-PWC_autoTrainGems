@@ -37,9 +37,9 @@ class FinalConfirmationMenu(Screen):
             energyLeftString = self.extractEnergy(energy)
             try:
                 energyLeft = int(energyLeftString)
+                break
             except:
                 print("Retry to get the remaining energy...")
-                break
 
 
         print(energyLeft)
