@@ -43,6 +43,7 @@ class FinalConfirmationMenu(Screen):
             self.clickOnImage(buttonX,buttonY)
             from model.screens.edit_gear_menu import EditGearMenu
             EditGearMenu(self.options).run()
+            return
 
 
         print(energyLeft)

@@ -9,8 +9,14 @@ class MenuScreen(Screen):
     def run(self):
         print("This is the Menu Screen")
         time.sleep(self.WAITTIME)
+
         buttonX, buttonY = self.findImage(self.trainImg)
         self.clickOnImage(buttonX, buttonY)
+        
+        if buttonX == None and buttonY == None:
+            print("Didnt find the button, trying again...")
+            MenuScreen(self.options).run()
+            return
         
         # Import here to avoid circular import
         from model.screens.training_menu_screen import TrainingMenuScreen
