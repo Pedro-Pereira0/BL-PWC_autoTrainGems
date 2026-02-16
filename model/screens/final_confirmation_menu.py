@@ -24,6 +24,7 @@ class FinalConfirmationMenu(Screen):
         time.sleep(self.WAITTIME)
 
         while True:
+            time.sleep(0.3)
             #Get The stamina value after the training
             energyLoc = self.findImageForscreenshot(self.energyImg)
             #Adds width because i want to extract the energy left

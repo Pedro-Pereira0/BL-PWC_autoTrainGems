@@ -33,4 +33,4 @@ class EndTrain(Screen):
 
         buttonX, buttonY = self.findImage(self.cancelButton)
         self.clickOnImage(buttonX, buttonY)
-        time.sleep(8)
+        time.sleep(12)
