@@ -8,6 +8,7 @@ class FinalConfirmationMenu(Screen):
         super().__init__(options)
         self.startTrainButton:str = options.imagePath + "control/startTrainButton.jpg"
         self.energyImg:str = options.imagePath + "control/energyImg.jpg"
+        self.cancelButton:str = options.imagePath + "control/cancelButton.jpg"
 
     def extractEnergy(self, string):
         string.strip()
@@ -23,8 +24,7 @@ class FinalConfirmationMenu(Screen):
         print("This is the Final Confirmation")
         time.sleep(self.WAITTIME)
 
-        while True:
-            time.sleep(0.3)
+        try:
             #Get The stamina value after the training
             energyLoc = self.findImageForscreenshot(self.energyImg)
             #Adds width because i want to extract the energy left
@@ -36,11 +36,13 @@ class FinalConfirmationMenu(Screen):
             energy = getTextFromImage(staminaImg)
 
             energyLeftString = self.extractEnergy(energy)
-            try:
-                energyLeft = int(energyLeftString)
-                break
-            except:
-                print("Retry to get the remaining energy...")
+            energyLeft = int(energyLeftString)
+        except:
+            print("Retry to get the remaining energy...")
+            buttonX, buttonY = self.findImage(self.cancelButton)
+            self.clickOnImage(buttonX,buttonY)
+            from model.screens.edit_gear_menu import EditGearMenu
+            EditGearMenu(self.options).run()
 
 
         print(energyLeft)
